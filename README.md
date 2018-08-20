@@ -9,5 +9,5 @@
                                          |_|   |_|    |___/ 
 </pre>
 
-# A play on the places you've been app utilizing guitars you've played--notably your favorites.
+### A play on the places you've been app utilizing guitars you've played--notably your favorites.
 
