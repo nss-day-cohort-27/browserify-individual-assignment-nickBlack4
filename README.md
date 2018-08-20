@@ -12,3 +12,9 @@
 ### A play on the places you've been app utilizing guitars you've played--notably your favorites.
 
 ## :guitar:
+
+### todo
+
+- [ ] generate form for adding guitars
+- [ ] add the guitar to DB
+- [ ] display guitar from DB
