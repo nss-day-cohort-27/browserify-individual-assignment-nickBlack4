@@ -69,11 +69,7 @@ const welcome = function() {
     // if we have guitars go ahead and display them otherwise let the user know we need to add guitars
     dataManager.getGuitars().then(r => {
         if (!(r.length === 0)) {
-            // create p for guitar display
-            const guitarDisplayP = document.createElement("p");
-            guitarDivReference.appendChild(guitarDisplayP);
-            // call display guitars function
-            dataManager.displayGuitar(guitarDisplayP);
+            dataManager.displayGuitar(guitarDiv);
         } else {
             console.log("There are no guitars to display so add one!");
             console.log(r.length);

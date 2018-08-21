@@ -1,16 +1,22 @@
 {
   "guitars": [
     {
-      "manufacturer": "fender",
-      "model": "stratocaster",
-      "color": "sunburst",
+      "manufacturer": "Fender",
+      "model": "Stratocaster",
+      "color": "Fiesta Red",
       "id": 1
     },
     {
-      "manufacturer": "gretsch",
-      "model": "6120",
-      "color": "orange",
+      "manufacturer": "Fender",
+      "model": "Telecaster",
+      "color": "Sunburst",
       "id": 2
+    },
+    {
+      "manufacturer": "G&L",
+      "model": "asat classic",
+      "color": "clear orange",
+      "id": 3
     }
   ]
 }

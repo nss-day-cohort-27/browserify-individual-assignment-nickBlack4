@@ -51,16 +51,19 @@ const dataManager = Object.create(null, {
     },
 
     displayGuitar: {
-        value: (containerToDisplayWithin) => {
+        value: (containerToPlaceCard) => {
             dataManager.getGuitars().then(r => {
                 r.forEach(element => {
-                    // console.log(element);
-                    containerToDisplayWithin.innerHTML += 
-                    `Manufacturer: ${element.manufacturer}<br/>
-                    Model: ${element.model}<br/>
+                    // need to create card here for each one and store it to an object or array
+                    // then put all the cards on DOM
+                    const guitarDisplayP = document.createElement("p");
+                    // set a class of guitarCard to guitarDisplayP
+                    guitarDisplayP.setAttribute("class", "guitarCard");
+                    guitarDisplayP.innerHTML += `Manufacturer: ${element.manufacturer}<br/>Model: ${element.model}<br/>
                     Color: ${element.color}<br/>
-                    ID: ${element.id}<br/>
-                    `;
+                    ID: ${element.id}<br/>`;
+                    containerToPlaceCard.appendChild(guitarDisplayP);
+                    
                 });
             });
         }
