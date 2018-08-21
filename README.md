@@ -15,6 +15,11 @@
 
 ### todo
 
-- [ ] generate form for adding guitars
-- [ ] add the guitar to DB
-- [ ] display guitar from DB
+- [x] generate form for adding guitars
+- [x] add the guitar to DB
+- [x] display guitar from DB
+- [x] database functionality
+- [x] generate guitar cards
+- [x] style everything
+
+Cheers!
