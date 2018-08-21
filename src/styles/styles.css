@@ -5,6 +5,7 @@ body {
 	background-color: #6b8e23;
 }
 
+/* get rid of box around hovered button */
 button:focus {outline:0;}
 
 .containerClass {
@@ -21,14 +22,14 @@ button:focus {outline:0;}
 }
 
 .guitarClass button {
-	font-size: 1em;
+	font-size: 1.2em;
 	color: black;
-	background: rgba(244, 252, 244, 0.5);
-	text-shadow: 0px 1px rgb(18, 43, 82);
-	height: 2em;
-	width: 8em;
+	background: rgba(181, 221, 228, 0.5);
+	text-shadow: 0px 1px rgb(0, 5, 14);
+	height: 3em;
+	width: 10em;
 	border-radius: 10px;
-	padding: 2px;
+	/* padding: 2px; */
 }
 
 .guitarClass button:hover {
@@ -36,8 +37,7 @@ button:focus {outline:0;}
 	background: rgba(56, 51, 51, 0.9);
 	text-shadow: 0px 1px #000;
 	border: 3px solid;
-	height: 2.3em;
-	width: 8.19em;
+	height: 3.3em;
 }
 
 .guitarClass form {
@@ -66,7 +66,7 @@ button:focus {outline:0;}
 h1 {
 	text-shadow: 2px 1px 1px rgb(217, 238, 167);
 	color: rgba(248, 8, 20, 0.8);
-	font-size: 2.9em;
+	font-size: 3.4em;
 }
 
 /* guitar card rules */
@@ -78,4 +78,13 @@ h1 {
 	font-family: verdana;
 	font-size: 1em;
 	border-radius: 10px;
+}
+
+.guitarCard:hover {
+	background: rgba(255, 255, 255, 0.9);
+}
+
+h1:hover {
+	color: rgba(161, 6, 14, 0.9);
+	text-shadow: 2px 1px 1px rgb(217, 238, 167);
 }

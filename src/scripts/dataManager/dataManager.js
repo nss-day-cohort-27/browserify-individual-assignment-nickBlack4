@@ -5,7 +5,7 @@
  */
 
 const dataManager = Object.create(null, {
-    // saveUser to database.json file
+    // save guitar to database.json file
     saveGuitar: {
         value: (guitar) => {
             return fetch("http://localhost:8088/guitars", {
@@ -19,29 +19,15 @@ const dataManager = Object.create(null, {
         }
     },
 
-    // get the users from database.json file
+    // get the guitars from database.json file
     getGuitars: {
         value: () => {
             return fetch("http://localhost:8088/guitars").then(r => r.json());
         }
     },
-
-    getGuitarID: {
-      value: (model) => {
-          return fetch(`http://localhost:8088/guitars/${model}`, {
-              method: "GET"
-          })
-            .then (r => {
-                let redman = r.json();
-                console.log("did code ever get here");
-                console.log("redman.id ", redman.id);
-                return redman.id;
-            });
-      }  
-    },
     
+    // delete a guitar from the list based off id
     deleteGuitar: {
-        // pass in a guitar object and then get the id to delete specific one from DB
         value: (id) => {
             return fetch(`http://localhost:8088/guitars/${id}`, {
                 method: "DELETE"
@@ -50,6 +36,7 @@ const dataManager = Object.create(null, {
         }
     },
 
+    // get all guitars, create a card for each one and display this card to DOM reference passed in
     displayGuitar: {
         value: (containerToPlaceCard) => {
             dataManager.getGuitars().then(r => {
@@ -59,6 +46,11 @@ const dataManager = Object.create(null, {
                     const guitarDisplayP = document.createElement("p");
                     // set a class of guitarCard to guitarDisplayP
                     guitarDisplayP.setAttribute("class", "guitarCard");
+                    // let's set the background color based on parity of id
+                    if (element.id % 2 === 0) {
+                        guitarDisplayP.setAttribute("style", "background: rgba(255,255,255,0.9)");
+                    }
+                    // set the innerHTML of each guitarCard
                     guitarDisplayP.innerHTML += `Manufacturer: ${element.manufacturer}<br/>Model: ${element.model}<br/>
                     Color: ${element.color}<br/>
                     ID: ${element.id}<br/>`;
