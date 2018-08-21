@@ -1,3 +1,16 @@
 {
-  "guitars": []
+  "guitars": [
+    {
+      "manufacturer": "fender",
+      "model": "stratocaster",
+      "color": "sunburst",
+      "id": 1
+    },
+    {
+      "manufacturer": "gretsch",
+      "model": "6120",
+      "color": "orange",
+      "id": 2
+    }
+  ]
 }

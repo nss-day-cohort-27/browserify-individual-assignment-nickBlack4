@@ -5,8 +5,10 @@ body {
 	background-color: #6b8e23;
 }
 
+button:focus {outline:0;}
+
 .containerClass {
-	background: rgba(0, 0, 0, 0.2);
+	background: rgba(0, 0, 0, 0.6);
 	padding: 50px;
 	border-bottom: 3px solid black;
 }
@@ -14,15 +16,16 @@ body {
 .guitarClass {
 	padding: 5px;
 	margin: 0 auto 0 auto;
+	color: white;
 }
 
 .guitarClass button {
-	font-size: 1.2em;
+	font-size: 1em;
 	color: black;
 	background: rgba(244, 252, 244, 0.5);
 	text-shadow: 0px 1px #fff;
-	height: 3em;
-	width: 10em;
+	height: 2em;
+	width: 8em;
 	border-radius: 10px;
 	padding: 2px;
 }
