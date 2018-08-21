@@ -1,6 +1,45 @@
 body {
 	margin: 0;
 	padding: 0;
-	background-image: url("");
-	background-color: olivedrab;
+	background-image: url("images/princetonBackground.jpg");
+	background-color: #6b8e23;
+}
+
+button:focus {outline:0;}
+
+.containerClass {
+	background: rgba(0, 0, 0, 0.6);
+	padding: 50px;
+	border-bottom: 3px solid black;
+}
+
+.guitarClass {
+	padding: 5px;
+	margin: 0 auto 0 auto;
+	color: white;
+}
+
+.guitarClass button {
+	font-size: 1em;
+	color: black;
+	background: rgba(244, 252, 244, 0.5);
+	text-shadow: 0px 1px #fff;
+	height: 2em;
+	width: 8em;
+	border-radius: 10px;
+	padding: 2px;
+}
+
+.guitarClass button:hover {
+	color: red;
+	background: rgba(56, 51, 51, 0.9);
+	text-shadow: 0px 1px #000;
+	border: 3px solid;
+}
+
+/* targets welcome message */
+h1 {
+	text-shadow: 2px 1px 0px rgb(15, 15, 15);
+	color: red;
+	font-size: 2.9em;
 }

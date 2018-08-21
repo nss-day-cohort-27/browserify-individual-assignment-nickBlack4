@@ -9,11 +9,17 @@ const dataManager = require("../dataManager/dataManager.js");
 const documentBody = document.querySelector("body");
 
 // create a div to hold everything in index.html for guitar module
+const containerDiv = document.createElement("div");
+containerDiv.setAttribute("class", "containerClass");
+documentBody.appendChild(containerDiv);
+
 const guitarDiv = document.createElement("div");
 guitarDiv.setAttribute("class", "guitarClass");
-documentBody.appendChild(guitarDiv);
 
 // get a reference to guitarDiv 
+const containerDivReference = document.querySelector(".containerClass");
+containerDivReference.appendChild(guitarDiv);
+
 const guitarDivReference = document.querySelector(".guitarClass");
 
 // get a reference to script element
@@ -21,7 +27,7 @@ const scriptTagReference = document.querySelector("script");
 
 // need to insert guitarDiv before script tag on body
 
-documentBody.insertBefore(guitarDivReference, scriptTagReference);
+documentBody.insertBefore(containerDivReference, scriptTagReference);
 
 // initial message to display to the page
 const welcomeMsg = "<h1>Welcome to Guitar Trippy!</h1>";
