@@ -1,3 +1,9 @@
+/**
+ * Author:  Nick Black
+ * File:  Guitar.js
+ * Purpose:  Controls flow of guitar collection application
+ */
+
 const dataManager = require("../dataManager/dataManager.js");
 
 const documentBody = document.querySelector("body");
@@ -17,6 +23,7 @@ const scriptTagReference = document.querySelector("script");
 
 documentBody.insertBefore(guitarDivReference, scriptTagReference);
 
+// initial message to display to the page
 const welcomeMsg = "<h1>Welcome to Guitar Trippy!</h1>";
 
 // create a paragraph for form
@@ -27,22 +34,31 @@ const addGuitarBtn = document.createElement("button");
 const guitarTextNode = document.createTextNode("add guitar");
 addGuitarBtn.appendChild(guitarTextNode);
 
-// create button to submit new guitar
+// create a button to submit new guitar
 const submitGuitarBtn = document.createElement("button");
 const submitGuitarTextNode = document.createTextNode("submit guitar");
 submitGuitarBtn.appendChild(submitGuitarTextNode);
 
-// guitar form string literal/interpolation
+// create a button to delete a guitar
+const deleteGuitarBtn = document.createElement("button");
+const deleteGuitarBtnTextNode = document.createTextNode("delete guitar");
+deleteGuitarBtn.appendChild(deleteGuitarBtnTextNode);
+
+// guitar form string literal/interpolation -- what the form should contain
 const guitarForm = `<form><fieldset><legend>Add a new guitar</legend>
 Manufacturer: <input type="text" name="manufacturer"><br/>
-Model: <input type="text" name="model"><br/></fieldset></form>`
+Model: <input type="text" name="model"><br/>
+Color: <input type="text" name="color"><br/></fieldset></form>`
 
 // function that is called in main.js to put welcome message on DOM as well as add new guitar button and form
 const welcome = function() {
     const welcomeParagraph = document.createElement("p");
     welcomeParagraph.innerHTML += welcomeMsg;
     guitarDivReference.appendChild(welcomeParagraph);
+    // add guitar button
     guitarDivReference.appendChild(addGuitarBtn);
+    // delete guitar button
+    guitarDivReference.appendChild(deleteGuitarBtn);
 
     // if we have guitars go ahead and display them otherwise let the user know we need to add guitars
     dataManager.getGuitars().then(r => {
@@ -68,24 +84,44 @@ addGuitarBtn.addEventListener("click", function displayForm() {
     formParagraph.appendChild(submitGuitarBtn);
 });
 
+// event listener for submit guitar button
 submitGuitarBtn.addEventListener("click", function submitGuitar() {
-    let manufacturerGuitar = document.querySelector("input[name=\"manufacturer\"]").value;
+    let manufacturer = document.querySelector("input[name=\"manufacturer\"]").value;
     let model = document.querySelector("input[name=\"model\"]").value;
-    // check that manufacturer and model are not an empty string
-    if (!(manufacturerGuitar === "") && (!(model === ""))) {
+    console.log("not broken");
+    // debugger
+    let color = document.querySelector("input[name=\"color\"]").value;
+   
+    console.log("broken");
+    // check that manufacturer, model, and color are not empty strings
+    if (!(manufacturer === "") && (!(model === "")) && (!(color === ""))) {
         // create a guitar object and pass to createGuitar
-        let myGuitar = {
-            manufacturer: manufacturerGuitar,
-            model: model
+        let newGuitar = {
+            manufacturer: manufacturer,
+            model: model,
+            color: color
         }
-        console.log("executing saveGuitar");
-        dataManager.saveGuitar(myGuitar);
-        
-        // clear form inputs
-        document.querySelector("input[name=\"manufacturer\"]").value = "";
-        document.querySelector("input[name=\"model\"]").value = "";
-
+        dataManager.saveGuitar(newGuitar);
+        // reloading page after new guitar is added to display it
+        location.reload();
     }
+});
+
+// pass the guitar object into dataManager.deleteGuitar() function
+deleteGuitarBtn.addEventListener("click", function deleteGuitar() {
+
+    // before being allowed to delete a guitar, make sure there is at least one in list
+    dataManager.getGuitars().then(r => {
+        if (!(r.length === 0)) {
+            let id = prompt("type in id name exactly matching ID in list");
+            // let id = dataManager.getGuitarID(model);
+            dataManager.deleteGuitar(id);
+            // reload webpage
+            location.reload();
+        } else {
+            console.log("There are no guitars to delete so add one!");
+        }
+    });
 });
 
 module.exports = welcome;
