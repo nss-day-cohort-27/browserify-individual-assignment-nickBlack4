@@ -1,16 +1,34 @@
 {
   "guitars": [
     {
-      "manufacturer": "fender",
-      "model": "stratocaster",
-      "color": "sunburst",
+      "manufacturer": "Fender",
+      "model": "Telecaster",
+      "color": "Cream",
       "id": 1
     },
     {
-      "manufacturer": "gretsch",
-      "model": "6120",
-      "color": "orange",
+      "manufacturer": "Gibson",
+      "model": "Les Paul",
+      "color": "Sunburst",
       "id": 2
+    },
+    {
+      "manufacturer": "Gibson",
+      "model": "Flying V",
+      "color": "Black",
+      "id": 3
+    },
+    {
+      "manufacturer": "Gretsch",
+      "model": "6120",
+      "color": "clear orange",
+      "id": 4
+    },
+    {
+      "manufacturer": "Jackson",
+      "model": "Rhandy Rhoads",
+      "color": "Polka Dot",
+      "id": 5
     }
   ]
 }

@@ -5,10 +5,11 @@ body {
 	background-color: #6b8e23;
 }
 
+/* get rid of box around hovered button */
 button:focus {outline:0;}
 
 .containerClass {
-	background: rgba(0, 0, 0, 0.6);
+	background: rgba(0, 0, 0, 0.4);
 	padding: 50px;
 	border-bottom: 3px solid black;
 }
@@ -17,17 +18,18 @@ button:focus {outline:0;}
 	padding: 5px;
 	margin: 0 auto 0 auto;
 	color: white;
+	width: 60%;
 }
 
 .guitarClass button {
-	font-size: 1em;
+	font-size: 1.2em;
 	color: black;
-	background: rgba(244, 252, 244, 0.5);
-	text-shadow: 0px 1px #fff;
-	height: 2em;
-	width: 8em;
+	background: rgba(181, 221, 228, 0.5);
+	text-shadow: 0px 1px rgb(0, 5, 14);
+	height: 3em;
+	width: 10em;
 	border-radius: 10px;
-	padding: 2px;
+	/* padding: 2px; */
 }
 
 .guitarClass button:hover {
@@ -35,11 +37,54 @@ button:focus {outline:0;}
 	background: rgba(56, 51, 51, 0.9);
 	text-shadow: 0px 1px #000;
 	border: 3px solid;
+	height: 3.3em;
+}
+
+.guitarClass form {
+	background: rgba(0, 0, 0, 0.3);
+	/* padding: 10px; */
+	border: 2px solid black;
+}
+
+.guitarClass form input {
+	margin-top: 1em;
+	/* padding: 5px; */
+	margin-bottom: 1em;
+	color: blue;
+	font-weight: bolder;
+}
+
+.guitarClass form legend {
+	background: rgba(0,0,0,0.7);
+	padding: 5px;
+	margin: 0;
+	border: 1px solid;
+	font-size: 1.5em;
 }
 
 /* targets welcome message */
 h1 {
-	text-shadow: 2px 1px 0px rgb(15, 15, 15);
-	color: red;
-	font-size: 2.9em;
+	text-shadow: 2px 1px 1px rgb(217, 238, 167);
+	color: rgba(248, 8, 20, 0.8);
+	font-size: 3.4em;
+}
+
+/* guitar card rules */
+.guitarCard {
+	background: rgba(255, 255, 255, 0.6);
+	border: 2px solid black;
+	padding: 20px;
+	color: black;
+	font-family: verdana;
+	font-size: 1em;
+	border-radius: 10px;
+}
+
+.guitarCard:hover {
+	background: rgba(255, 255, 255, 0.9);
+}
+
+h1:hover {
+	color: rgba(161, 6, 14, 0.9);
+	text-shadow: 2px 1px 1px rgb(217, 238, 167);
 }
