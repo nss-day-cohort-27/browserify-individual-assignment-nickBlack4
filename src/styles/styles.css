@@ -17,6 +17,7 @@ button:focus {outline:0;}
 	padding: 5px;
 	margin: 0 auto 0 auto;
 	color: white;
+	width: 60%;
 }
 
 .guitarClass button {
@@ -37,6 +38,28 @@ button:focus {outline:0;}
 	border: 3px solid;
 	height: 2.3em;
 	width: 8.19em;
+}
+
+.guitarClass form {
+	background: rgba(0, 0, 0, 0.3);
+	/* padding: 10px; */
+	border: 2px solid black;
+}
+
+.guitarClass form input {
+	margin-top: 1em;
+	/* padding: 5px; */
+	margin-bottom: 1em;
+	color: blue;
+	font-weight: bolder;
+}
+
+.guitarClass form legend {
+	background: rgba(0,0,0,0.7);
+	padding: 5px;
+	margin: 0;
+	border: 1px solid;
+	font-size: 1.5em;
 }
 
 /* targets welcome message */

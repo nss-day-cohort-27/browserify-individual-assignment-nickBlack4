@@ -51,10 +51,10 @@ const deleteGuitarBtnTextNode = document.createTextNode("delete guitar");
 deleteGuitarBtn.appendChild(deleteGuitarBtnTextNode);
 
 // guitar form string literal/interpolation -- what the form should contain
-const guitarForm = `<form><fieldset><legend>Add a new guitar</legend>
+const guitarForm = `<form><legend>Add a new guitar</legend>
 Manufacturer: <input type="text" name="manufacturer"><br/>
 Model: <input type="text" name="model"><br/>
-Color: <input type="text" name="color"><br/></fieldset></form>`
+Color: <input type="text" name="color"><br/></form>`
 
 // function that is called in main.js to put welcome message on DOM as well as add new guitar button and form
 const welcome = function() {
@@ -69,10 +69,11 @@ const welcome = function() {
     // if we have guitars go ahead and display them otherwise let the user know we need to add guitars
     dataManager.getGuitars().then(r => {
         if (!(r.length === 0)) {
+            // call displayGuitar and pass the area on DOM you want to display invocation
             dataManager.displayGuitar(guitarDiv);
         } else {
-            console.log("There are no guitars to display so add one!");
-            console.log(r.length);
+            // we don't have any guitars let the user know!
+            alert("There are no guitars to display so add one!");
         }
     });
 }
